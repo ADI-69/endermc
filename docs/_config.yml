@@ -1,8 +1,8 @@
 # Set this website's info
 # Change "coffeebank" to your GitHub username
 # Change "moonrise" to your repository name
-url: "https://coffeebank.github.io"
-baseurl: "/moonrise"
+url: "https://adi-69.github.io"
+baseurl: "/endermc"
 siteIcon: /media/android-chrome-192x192.png
 siteYear: 2020
 siteFooterlink: /about
@@ -11,9 +11,9 @@ showinSearchEngines: true
 
 
 # Set basic server info
-serverName: Moonrise MC
+serverName: Ender MC
 serverDescription: A Minecraft server where we have lots of fun!
-serverIP: 31.41.59.26:5358
+serverIP: play.endermc.fun
 useBedrockForOnlineStatus: false
 
 
