@@ -3,7 +3,7 @@
 # Change "moonrise" to your repository name
 url: "https://adi-69.github.io"
 baseurl: "/endermc"
-siteIcon: https://media.discordapp.net/attachments/853079475017089054/961609589470666772/Glitch-Purple.avi-Full-Size.gif
+siteIcon: /assets/Glitch-Purple.avi-Full-Size.gif
 siteYear: 2023
 siteFooterlink: /about
 showinSearchEngines: true
