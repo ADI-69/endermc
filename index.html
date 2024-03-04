@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<head>
+    <!-- Favicon -->
+    <link rel="icon" href="https://raw.githubusercontent.com/ADI-69/endermc/master/d803cb0f258bfd0b43f745dad5325ad8.webp">
+    <!-- Title -->
+    <title>EnderNodes - UPI</title>
+    <!-- Meta Tags -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Rubik');
+
+    html {
+        min-height: 100%;
+        background-image: url("https://adraj.vercel.app/wp10881053-purple-minecraft-wallpapers.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: 'Rubik', sans-serif;
+        color: white;
+    }
+
+    img {
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+        margin-bottom: 2rem;
+    }
+
+    .box {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.2);
+        animation-fill-mode: forwards;
+    }
+
+    .box-secondary {
+        width: 100%;
+        text-align: center;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        text-transform: uppercase;
+        padding: 30px;
+    }
+
+    .btn-main {
+        position: relative;
+        background: 0 0;
+        color: #8800ff;
+        text-transform: uppercase;
+        text-decoration: none;
+        border: 0.2em solid #7b00ff;
+        padding: 0.5em 1em;
+        -webkit-appearance: button;
+        font-weight: 700;
+    }
+
+    .btn-main:hover {
+        background: #6411b1;
+        color: #fff;
+    }
+</style>
+<body>
+<div class="box">
+    <div class="box-secondary">
+        <h1>Please pay the amount of <span id="amountDisplay"></span></h1>
+        <div>
+            <img src="https://adraj.vercel.app/qr-code.png">
+        </div>
+        <div>
+            <a class="btn-main" href="https://discord.endernodes.com">Create a ticket here and drop a screenshot after payment</a>
+        </div>
+    </div>
+</div>
+<script>
+    function getParameterByName(name, url) {
+      if (!url) url = window.location.href;
+      name = name.replace(/[\[\]]/g, '\\$&');
+      var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+          results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
+    var amount = getParameterByName('amount');
+
+    var amountDisplayElement = document.getElementById('amountDisplay');
+    if (amountDisplayElement) {
+      amountDisplayElement.textContent = amount;
+    }
+  </script>
+</body>
+
