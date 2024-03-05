@@ -97,10 +97,11 @@
 
     var amount = getParameterByName('amount');
     var result = amount * 83;
+    var resultt = Math.round(result)
 
     var amountDisplayElement = document.getElementById('amountDisplay');
     if (amountDisplayElement) {
-      amountDisplayElement.textContent = result;
+      amountDisplayElement.textContent = resultt;
     }
   </script>
 </body>
