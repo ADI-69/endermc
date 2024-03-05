@@ -75,7 +75,7 @@
 <body>
 <div class="box">
     <div class="box-secondary">
-        <h1>Please pay the amount of <span id="amountDisplay"></span></h1>
+        <h1>Please pay the amount of ₹<span id="amountDisplay"></span></h1>
         <div>
             <img src="https://adraj.vercel.app/qr-code.png" width="200" height="200">
         </div>
@@ -96,10 +96,11 @@
     }
 
     var amount = getParameterByName('amount');
+    var result = amount * 83;
 
     var amountDisplayElement = document.getElementById('amountDisplay');
     if (amountDisplayElement) {
-      amountDisplayElement.textContent = amount;
+      amountDisplayElement.textContent = result;
     }
   </script>
 </body>
