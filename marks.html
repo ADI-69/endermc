@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marks Calculator</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-800 text-white">
+
+<div class="container mx-auto px-4 py-8">
+    <div class="bg-gray-700 rounded-lg p-8">
+        <h1 class="text-3xl font-bold mb-4 text-center">Marks Calculator</h1>
+        <p class="mb-4">Toggle between 70 marks paper and 80 marks paper:</p>
+        <label for="toggle" class="block mb-2">Select Paper:</label>
+        <select id="toggle" class="bg-gray-800 text-white p-2 rounded w-full mb-4">
+            <option value="70">70 Marks Paper</option>
+            <option value="80">80 Marks Paper</option>
+        </select>
+        <div class="flex justify-center">
+            <div class="w-full sm:w-60%">
+                <label for="pt1" class="block mb-2">Periodic Test 1 Marks:</label>
+                <input type="number" id="pt1" class="bg-gray-800 text-white p-2 rounded w-full mb-4" min="0" max="35">
+            </div>
+        </div>
+        <div class="flex justify-center">
+            <div class="w-full sm:w-60%">
+                <label for="halfYearly" class="block mb-2">Half Yearly Marks:</label>
+                <input type="number" id="halfYearly" class="bg-gray-800 text-white p-2 rounded w-full mb-4" min="0" max="70">
+            </div>
+        </div>
+        <div class="flex justify-center">
+            <div class="w-full sm:w-60%">
+                <label for="pt2" class="block mb-2">Periodic Test 2 Marks:</label>
+                <input type="number" id="pt2" class="bg-gray-800 text-white p-2 rounded w-full mb-4" min="0" max="35">
+            </div>
+        </div>
+        <div class="flex justify-center">
+            <button onclick="calculateMarks()" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Calculate</button>
+        </div>
+        <div class="mt-8 flex justify-center">
+            <p>Marks Needed in Final Exam: <span id="finalMarks"></span></p>
+        </div>
+    </div>
+</div>
+
+<footer class="bg-gray-900 text-center py-4">
+    <div class="container mx-auto flex justify-end">
+        <p class="text-gray-400">-Made by A D I .</p>
+    </div>
+</footer>
+
+
+<script>
+    function calculateMarks() {
+        var paperMarks = parseInt(document.getElementById("toggle").value);
+        var pt1Marks = parseInt(document.getElementById("pt1").value);
+        var halfYearlyMarks = parseInt(document.getElementById("halfYearly").value);
+        var pt2Marks = parseInt(document.getElementById("pt2").value);
+        
+        var finalMarksNeeded;
+        
+        if (paperMarks === 70) {
+            finalMarksNeeded = (33 - ((pt1Marks * 0.28) + (halfYearlyMarks * 0.42) + (pt2Marks * 0.28))) * 1.4;
+        } else if (paperMarks === 80) {
+            finalMarksNeeded = (33 - ((pt1Marks * 0.25) + (halfYearlyMarks * 0.37) + (pt2Marks * 0.25))) * 1.6;
+        }
+        
+        document.getElementById("finalMarks").innerText = finalMarksNeeded.toFixed(2);
+    }
+</script>
+
+</body>
+</html>
